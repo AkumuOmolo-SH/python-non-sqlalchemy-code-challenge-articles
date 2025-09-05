@@ -14,7 +14,7 @@ class Article:
 
     @title.setter
     def title(self, value):
-        # only allow setting once
+        
         if hasattr(self, "_title"):
             return
 
@@ -85,9 +85,7 @@ class Author:
         return Article(self, magazine, title)
 
     def topic_areas(self):
-        #     mags = self.magazines()
-        #    if not mags:
-        #          return None
+
         areas = list({magazine.category for magazine in self.magazines()})
         if not areas:
             return None
